@@ -114,5 +114,4 @@ With the service running, in a second terminal:
 ```
 python test_session_service.py            # sends requests and prints each response (about 3 seconds)
 python test_session_service.py --full     # also waits a real 60 seconds for the accuracy check
-python test_session_accuracy.py           # controlled 60 second accuracy test with a fake clock
 ```
