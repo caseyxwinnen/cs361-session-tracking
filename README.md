@@ -21,7 +21,7 @@ python session_service.py
 
 ## How to REQUEST data
 
-| Action | Request | Parameters |                                                                   #5
+| Action | Request | Parameters |
 |---|---|---|
 | Start a session | `POST /sessions` | none |
 | End a session | `POST /sessions/<session_id>/end` | `session_id` in the URL |
@@ -36,7 +36,7 @@ BASE = "http://127.0.0.1:8363"
 
 # Start a session
 response = requests.post(BASE + "/sessions")
-session_id = response.json()["session_id"]                                                          #6
+session_id = response.json()["session_id"]
 # End the session
 response = requests.post(f"{BASE}/sessions/{session_id}/end")
 
@@ -48,7 +48,7 @@ response = requests.get(f"{BASE}/sessions/{session_id}")
 
 Every response is JSON. Read it with `response.json()`.
 
-| Request | Success | Failure |                                                                     #7
+| Request | Success | Failure |
 |---|---|---|
 | Start | `201` + `{"session_id": "s001", "start_time": "2026-11-10T02:00:00Z"}` | none |
 | End | `200` + session details (below) | `404` + `{"error": "Session not found"}` |
@@ -67,7 +67,7 @@ Example call (Python):
 
 ```python
 result = response.json()
-print(result["duration_seconds"])                                                                   #8
+print(result["duration_seconds"])
 ```
 
 Behavior in cases the contract does not spell out:
